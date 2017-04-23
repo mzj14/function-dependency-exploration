@@ -93,12 +93,12 @@ class TANE(object):
 
         # level-wise algorithm
         for size in range(2, column_count + 1):
-            print('--------------------------------------------')
-            print('size = ', size)
+            # print('--------------------------------------------')
+            # print('size = ', size)
             # enumerate all subsets whose size equals size
             combs = [set(x) for x in list(combinations(range(column_count), size))]
             for comb in combs:
-                print(comb)
+                # print(comb)
                 rhs_result, belonged = self.compute_rhs(comb)
                 # print('belonged = ', belonged)
                 # skip comb that is not in the current level
