@@ -59,7 +59,7 @@ Run
 ```
 pylint3 --rcfile=.pylint main.py algorithm utils > analysis.html
 ```
-to see analysis result in `analysis.html`
+to see analysis result in `analysis.html`.
 
 PS: pylint3 is used to meet the requirement of homework, which could be ignored at your convenience.
 
@@ -68,7 +68,7 @@ Run
 ```
 python3 main.py -i data/data.txt -o output.txt --breaker=,
 ```
-to get function dependencies in `output.txt` for table in `data/data.txt`
+to get function dependencies in `output.txt` for table in `data/data.txt`.
  
 #### Run test
 Run
@@ -76,5 +76,5 @@ Run
 coverage run test.py
 coverage html
 ```
-to get a coverage report of the test
+to get a coverage report of the test.
 

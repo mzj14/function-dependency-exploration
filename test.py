@@ -17,22 +17,26 @@ class MyTestCase(unittest.TestCase):
     """
     a test case
     """
+    TABLE_FILE = 'data/test_data.txt'
+    STANDARD_RESULT_FILE = 'data/test_output.txt'
+    TANE_RESULT_FILE = 'data/test_output_1.txt'
+
     def setUp(self):
         """
         load table and standard result into memory
         """
         print('Test begins')
         print('Read table from file')
-        self.table = Reader.read_table_from_file('data/test_data.txt', ',')
+        self.table = Reader.read_table_from_file(MyTestCase.TABLE_FILE, ',')
         print('Read standard function dependency from file')
-        self.standard_result = get_result_from_file('data/test_output.txt')
+        self.standard_result = get_result_from_file(MyTestCase.STANDARD_RESULT_FILE)
 
     def tearDown(self):
         """
         remove output file generated in test process
         """
         print('Remove output file generated in test process')
-        remove('data/test_output_1.txt')
+        remove(MyTestCase.TANE_RESULT_FILE)
         print('Test ends')
 
     def test_tane(self):
@@ -43,8 +47,8 @@ class MyTestCase(unittest.TestCase):
         tane = TANE(self.table)
         tane.run()
         print('Write result dependencies to file')
-        Writer.write_dependency_to_file(tane.ans, 'data/test_output_1.txt')
-        result = get_result_from_file('data/test_output_1.txt')
+        Writer.write_dependency_to_file(tane.ans, MyTestCase.TANE_RESULT_FILE)
+        result = get_result_from_file(MyTestCase.TANE_RESULT_FILE)
         print('Compare algorithm result with standard result')
         self.assertEqual(self.standard_result, result)
 
