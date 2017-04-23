@@ -21,7 +21,9 @@ class Writer(object):
         :param dependency: the function dependency derived from TANE algorithm
         :return: a string representing the expression
         """
-        return slugify(dependency[0], ' ') + ' -> ' + str(dependency[1])
+        left_side = [x + 1 for x in dependency[0]]
+        right_side = dependency[1] + 1
+        return slugify(left_side, ' ') + ' -> ' + str(right_side)
 
     @classmethod
     def write_dependency_to_file(cls, dependencies, output_file_name):
