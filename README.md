@@ -1,12 +1,15 @@
 ## data_dependency_exploration
 
-TANE algorithm implementation for function dependency exploration
+A TANE algorithm implementation for function dependency exploration
+
+Command line in this introduction is fully tested on Ubuntu 16.04 
 
 
 ### Prerequisite
 
 * python3(>=3.5.2)
-* pylint3(>=1.5.2)
+* pylint3(>=1.5.2), acquired by `sudo apt-get install pylint3`
+* coverage(>= 4.3.4), acquired by `sudo pip3 install coverage`
 
 ### Project structure
 
@@ -36,7 +39,11 @@ to generate documents for module details
 
 #### main.py
 
-* This file is an example of using previous module 
+* An example of using above modules 
+
+#### test.py
+
+* Test cased
 
 Run
 ```
@@ -63,5 +70,11 @@ python3 main.py -i data/data.txt -o output.txt --breaker=,
 ```
 to get function dependencies in `output.txt` for table in `data/data.txt`
  
-#### Test
-//TODO:
+#### Run test
+Run
+```
+coverage run test.py
+coverage html
+```
+to get a coverage report of the test
+
