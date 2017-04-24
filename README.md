@@ -1,8 +1,8 @@
-## data_dependency_exploration
+## function-dependency-exploration
 
 A TANE algorithm implementation for function dependency exploration
 
-Command line in this introduction is fully tested on Ubuntu 16.04 
+Command lines in this introduction are fully tested on Ubuntu 16.04 
 
 
 ### Prerequisite
